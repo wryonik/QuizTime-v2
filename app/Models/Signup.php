@@ -14,11 +14,12 @@
 
         public static function AddUser($username,$password) {
             $db = self::getDB();
+            $password_hash = hash('sha256',$password);
             $user = $db->prepare("INSERT into user (user,pass) VALUES (:username, :password)");
             
             $user->execute(array(
                 "username" => $username,
-                "password" => $password
+                "password" => $password_hash
 
             ));
         }

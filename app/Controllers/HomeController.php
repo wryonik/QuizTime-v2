@@ -28,10 +28,8 @@
                 header("Location: /menu");
             }
             else {
-                echo $this->twig->render("home.html",array(
-                    "title" => "Login",
-                    "error" => "Invalid username or password"
-                ));
+                echo $this->twig->render("home.html");
+                echo "try again";
             }
         }
     }

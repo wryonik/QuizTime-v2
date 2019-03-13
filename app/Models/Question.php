@@ -48,36 +48,34 @@
 
         public static function Validate($question_number,$answer) {
             $db=self::getDB();
-            $query = $db->prepare("SELECT * FROM questions JOIN choices WHERE questions.question_number=choices.question_number AND questions.question_number=:question_number AND is_correct=1");
-            $query->execute(array(
-                "question_number" => $question_number
-             ));
-            $result = $query->fetchAll();
-            
-            if($result[0]['options']==$answer)
-            {
-                $query =$db->prepare("INSERT INTO result (user,question_number,status,score) VALUES (:username,:question_number,1,result['score'])");
-                
-                
+            if($_SESSION['username']!=""){
+                $query = $db->prepare("SELECT * FROM questions JOIN choices WHERE questions.question_number=choices.question_number AND questions.question_number=:question_number AND is_correct=1");
                 $query->execute(array(
-                    "question_number" => $question_number,
-                    "username"=>$_SESSION['username']
-                 ));
+                    "question_number" => $question_number
+                ));
+                $result = $query->fetchAll();
+                
+                if($result[0]['options']==$answer)
+                {
+                    $query =$db->prepare("INSERT INTO result (user,question_number,status,score) VALUES (:username,:question_number,1,result['score'])");
+                    
+                    
+                    $query->execute(array(
+                        "question_number" => $question_number,
+                        "username"=>$_SESSION['username']
+                    ));
+                }
+                else{
+                    $query =$db->prepare("INSERT INTO result (user,question_number,status,score) VALUES (:username,:question_number,0,0)");
+                    $query->execute(array(
+                        "question_number" => $question_number,
+                        "username"=>$_SESSION['username']
+                    ));
+                }
             }
-            else{
-                $query =$db->prepare("INSERT INTO result (user,question_number,status,score) VALUES (:username,:question_number,0,0)");
-                $query->execute(array(
-                    "question_number" => $question_number,
-                    "username"=>$_SESSION['username']
-                 ));
-            }
-             
         }
 
-        public static function Update() {
-            $db=self::getDB();
-            $query = $db->prepare("UPDATE user ");
-        }
+        
 
     }
     

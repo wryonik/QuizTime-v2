@@ -15,16 +15,15 @@
         public static function ValidateUser($username,$password){
             
             $db= self::getDB();
+            $password_hash = hash('sha256',$password);
             $_SESSION['username']=$username;
-            $_SESSION['password']=$password;
-            
-            
+            $_SESSION['password']=$password_hash;
             $user = $db->prepare("SELECT * from user where user=:username and pass=:password");
             
             $user->execute(array(
                 
                 "username" => $username,
-                "password" => $password
+                "password" => $password_hash
             ));
 
             $row = $user->fetch(\PDO::FETCH_ASSOC);

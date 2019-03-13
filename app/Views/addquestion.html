@@ -14,7 +14,7 @@
         <form method="POST" action="/addquestion">
             <p>
                 <label class="label">Enter Question Number</label>
-                <input type="text" name="question_number">
+                <input type="number" name="question_number" min="0">
             </p>
             <p>
                 <label class="label">Enter Question Text</label>
@@ -28,11 +28,11 @@
             {% endfor %}
             <p>
                 <label class="label">Correct Option</label>
-                <input type="number" name="correct_option">
+                <input type="number" name="correct_option" min="1" max="4">
             </p>
             <p>
                 <label class="label">Points</label>
-                <input type="number" name="points">
+                <input type="number" name="points" min="0">
             </p>
             <div class="button">
                 <input type="submit" name ="submit" value = "SUBMIT">

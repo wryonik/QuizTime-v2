@@ -2,7 +2,7 @@
 
     namespace Controllers;
     use \Models\Leaderboard;
-
+    session_start();
     class LeaderboardController
     {
 
@@ -16,11 +16,13 @@
 
         public function get()
         {
-            $data = Leaderboard::GetLeaderboard();    
-            echo $this->twig->render("header.html") ;
-            echo $this->twig->render("leaderboard.html",array(
-                "arr" => $data,
-            ));
+            if($_SESSION['username']!="") {
+                $data = Leaderboard::GetLeaderboard();    
+                echo $this->twig->render("header.html") ;
+                echo $this->twig->render("leaderboard.html",array(
+                    "arr" => $data,
+                ));
+            }
         }
 
     }

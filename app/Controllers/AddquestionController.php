@@ -13,12 +13,14 @@
         }
 
         public function get() {
-            echo $this->twig->render("header.html") ;
-            if($_SESSION['username']=="admin") {
-                echo $this->twig->render("addquestion.html") ;
-            }
-            else {
-                echo "You need to be admin first";
+            if($_SESSION['username']!="") {
+                echo $this->twig->render("header.html") ;
+                if($_SESSION['username']=="admin") {
+                    echo $this->twig->render("addquestion.html") ;
+                }
+                else {
+                    echo "You need to be admin first";
+                }
             }
         }
         
