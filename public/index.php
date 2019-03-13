@@ -7,6 +7,7 @@ Toro::serve(array(
     "/menu" =>"Controllers\\MenuController",
     "/leaderboard" =>"Controllers\\LeaderboardController",
     "/addquestion" =>"Controllers\\AddquestionController",
-    "/question" =>"Controllers\\QuestionController"
+    "/question" =>"Controllers\\QuestionController",
+    "/logout" =>"Controllers\\LogoutController"
 ));
 ?>
