@@ -1,0 +1,14 @@
+{
+    "name":"shadow/mvcassignment",
+    "description":"Link Saving App",
+    "require":{
+        "torophp/torophp":"dev-master",
+        "twig/twig":"2.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "Controllers\\":"app/Controllers",
+            "Models\\":"app/Models"
+        }
+    }    
+}
