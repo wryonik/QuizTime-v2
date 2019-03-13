@@ -1,0 +1,24 @@
+html,body {
+    width:100%;
+}
+
+.navbar {
+    width:100%;
+    text-align: right;
+    margin-right:5%;
+    margin-top: 1%;
+}
+
+.links {
+    text-decoration: none;
+    color:red;
+    margin-right:3%;
+    
+}
+
+.menu {
+    font-size: 8vw;
+    color:black;
+    text-align: center;
+    margin-top: 15%
+}

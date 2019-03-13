@@ -2,20 +2,33 @@ html,body{
     width:100%;
 }
 
-.di {
+.container {
   width:100%;
-  margin-top:7%;
+  margin-bottom: 5vw
+}
+
+.addquestion-heading {
+    text-align:center;
+    font-size: 2vw;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: blue;
+}
+
+.button {
+    text-align: center
 }
 
 .label {
-    color:blue;
-    font-size: 2vw;
+    color:black;
+    font-size: 1.3vw;
     margin-left:30%;
 }
 
 input[type=text] {
     width:40%;
     margin-left:30%; 
+    margin-top:0.5%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -25,6 +38,18 @@ input[type=text] {
 
 input[type=password] {
   width:40%;
+  margin-top:0.5%;
+  margin-left:30%; 
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  padding-right:50px
+  }
+
+input[type=number] {
+  width:40%;
+  margin-top:0.5%;
   margin-left:30%; 
   padding: 12px;
   border: 1px solid #ccc;
@@ -40,11 +65,8 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: left;
-    margin:2vh;
-    margin-left:31%;
   }
   
-  input[type=submit]:hover {
+input[type=submit]:hover {
     background-color: #45a049;
   }
