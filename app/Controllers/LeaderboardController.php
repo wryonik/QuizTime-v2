@@ -16,11 +16,11 @@
 
         public function get()
         {
-                $data = Leaderboard::GetLeaderboard();    
+            $data = Leaderboard::GetLeaderboard();    
 
-                echo $this->twig->render("leaderboard.html",array(
-                    "arr" => $data,
-                ));
+            echo $this->twig->render("leaderboard.html",array(
+                "arr" => $data,
+            ));
         }
 
     }

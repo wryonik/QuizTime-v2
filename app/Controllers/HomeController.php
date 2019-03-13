@@ -16,8 +16,8 @@
 
         public function get()
         {
-                echo $this->twig->render("home.html", array(
-                    "title" => "Login")) ;
+            echo $this->twig->render("home.html", array(
+                "title" => "Login")) ;
         }
 
         public function post() {
