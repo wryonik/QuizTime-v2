@@ -3,39 +3,40 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Questions</title>
+    <title>Add Questions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href=".css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/addquestion.css">
     
 </head>
 <body>
     <div class="container">
+        <p class="addquestion-heading">ADD QUESTION</p>
         <form method="POST" action="/addquestion">
             <p>
-                    <label>Enter Question Number</label>
-                    <input type="text" name="question_number">
+                <label class="label">Enter Question Number</label>
+                <input type="text" name="question_number">
             </p>
             <p>
-                <label>Enter Question Text</label>
+                <label class="label">Enter Question Text</label>
                 <input type="text" name="question_text">
             </p>
             {% for i in 1..4 %}
             <p>
-                <label>Option {{i}}</label>
+                <label class="label">Option {{i}}</label>
                 <input type="text" name="option{{i}}">
             </p>
             {% endfor %}
             <p>
-                <label>Correct Option</label>
+                <label class="label">Correct Option</label>
                 <input type="number" name="correct_option">
             </p>
             <p>
-                <label>Points</label>
+                <label class="label">Points</label>
                 <input type="number" name="points">
             </p>
-            <p>
-                <input type="submit" name ="submit" value = "submit">
-            </p>
+            <div class="button">
+                <input type="submit" name ="submit" value = "SUBMIT">
+            </div>
         </form>
 
     

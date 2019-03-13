@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Problems</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/question.css">
 </head>
 <body>
     <div class="container">
-            {% for i in 0..(data|length)/4 %}
+        <p class="addquestion-heading">PROBLEMS</p>
+        {% for i in 0..(data|length)/4 %}
             <form method="POST" action="/question">
-                <p>
+                <p class="question-data">
                     {{i + 1}} - {{data[i*4].text}}
                 </p>
                 <input type="text" value="{{data[i*4].question_number}}" name="question_number" hidden="true">
                 {% for j in 0..3 %}
-                <p>
-                    <input type= "radio" name="option{{i}}" value="{{data[i*4+j].options}}">{{data[i*4+j].options}} 
-                </p>
+                    <p>
+                        <input type= "radio" name="option{{i}}" value="{{data[i*4+j].options}}">{{data[i*4+j].options}} 
+                    </p>
                 {% endfor %}
-            <p>
-                <input type="submit" value="submit" name="submit">
-            </p>
-        </form>
+                <div class="button">
+                    <input type="submit" value="Submit" name="submit">
+                </div>
+            </form>
         {% endfor %}
     </div>
 </body>

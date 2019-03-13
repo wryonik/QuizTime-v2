@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>QuizTime</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/leaderboard.css">
 </head>
 <body>
-        <table>
+    <p class="leaderboard-heading">Leaderboard</p>
+    <table class="table">
+        <tr>
+            <th>User</th>
+            <th>Points</th>
+        </tr>
+        {%for row in arr%}
             <tr>
-                <th>user</th>
-                <th>points</th>
+                <td>{{row.user}}</td>
+                <td>{{row.score}}</td>
             </tr>
-            {%for row in arr%}
-                <tr>
-                    <td>{{row.user}}</td>
-                    <td>{{row.score}}</td>
-                </tr>
-            {% endfor %}
-        </table>
-
-
-
+        {% endfor %}
+    </table>
 </body>
 </html>
