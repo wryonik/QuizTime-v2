@@ -16,6 +16,7 @@
 
         public function get()
         {
+            echo $this->twig->render("header.html");
             echo $this->twig->render("menu.html");
         }
     }

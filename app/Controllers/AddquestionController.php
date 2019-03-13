@@ -1,7 +1,7 @@
 <?php
     namespace Controllers;
     use \Models\Addquestion;
-
+    session_start();
     class AddquestionController {
 
         protected $twig ;
@@ -13,7 +13,13 @@
         }
 
         public function get() {
-            echo $this->twig->render("addquestion.html") ;
+            echo $this->twig->render("header.html") ;
+            if($_SESSION['username']=="admin") {
+                echo $this->twig->render("addquestion.html") ;
+            }
+            else {
+                echo "You need to be admin first";
+            }
         }
         
         public function post() {

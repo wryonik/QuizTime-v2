@@ -20,6 +20,7 @@
             // $answer_data=Question::GetOptions();
             
             $data = Question::Populate();
+            echo $this->twig->render("header.html") ;
             echo $this->twig->render("question.html",array(
                 // "questions_data" => $data,
                 // "choices_data"=>$answer_data
