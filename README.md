@@ -1,4 +1,4 @@
-# quiz_platform
+# Quiz Platform
 
 ## How to run
 
