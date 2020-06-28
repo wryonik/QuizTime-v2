@@ -1,4 +1,4 @@
-# Quiz Platform
+# QuizTime v2
 
 ## How to run
 
