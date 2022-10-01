@@ -1,6 +1,6 @@
 # QuizTime v2
 
-## How to run
+## How to run on local machine
 
 1. `git clone https://github.com/shubhamgupta2956/QuizTime-v2.git`
 2. `cd QuizTime-v2`
