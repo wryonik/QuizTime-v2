@@ -10,3 +10,7 @@
 6. `sudo a2ensite mvc_php.sdslabs.local.conf`
 7. `sudo service apache2 restart`
 8. Open [http://mvc_php.sdslabs.local](mvc_php.sdslabs.local) in your browser
+
+Made with **khoon**, **paseena** and **love** `:-)` by
+
+Shubham ([wryonik](https://github.com/wryonik))
